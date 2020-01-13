@@ -13,13 +13,13 @@ namespace RPSLS
         //Constructor
         public Computer()
         {
+
         }
         //Member Methods (CAN DO)
         public override void GestureChoice()
         {
             Random random = new Random();
-            ChosenGesture = gestures[random.Next(gestures.Count + 1)].ToLower();
-         
+            ChosenGesture = gestures[random.Next(5)].ToLower();       
         }
 
     }

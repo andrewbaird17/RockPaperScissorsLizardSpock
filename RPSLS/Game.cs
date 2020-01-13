@@ -73,7 +73,12 @@ namespace RPSLS
         {
             do
             {
+                Console.WriteLine("Player 1's Turn");
+                Console.ReadLine();
                 Player1.GestureChoice();
+                Console.Clear();
+                Console.WriteLine("Player 2's Turn");
+                Console.ReadLine();
                 Player2.GestureChoice();
                 CompareChoices();
             } while (player1Wins != 2 && player2Wins != 2);
@@ -84,13 +89,19 @@ namespace RPSLS
             }
             else if (player2Wins == 2)
             {
-
+                Console.WriteLine("Player 2 Wins!");
+                Console.ReadLine();
             }
         }
 
         public void CompareChoices()
         {
+            if (Player1.ChosenGesture == Player2.ChosenGesture) 
+            {
+                Console.WriteLine("Player 1 Chose: " + Player1.ChosenGesture + " Player 2 Chose: " + Player2.ChosenGesture + "\nNo Winner this round, please try again.");
 
+                Console.ReadLine();
+            }
         }
         public void DetermineWinner()
         {
