@@ -8,5 +8,12 @@ namespace RPSLS
 {
     class Human
     {
+        //Member Variables (HAS A)
+
+        //Constructor
+
+        //Member Methods (CAN DO)
+
+
     }
 }

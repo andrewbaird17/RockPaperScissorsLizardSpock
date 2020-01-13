@@ -8,5 +8,18 @@ namespace RPSLS
 {
     class Game
     {
+        //Member Variables (HAS A)
+
+        //Constructor
+        public Game()
+        {
+            
+        }
+        //Member Methods (CAN DO)
+        public void RunGame()
+        {
+
+        }
+
     }
 }
