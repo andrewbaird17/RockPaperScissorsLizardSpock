@@ -15,6 +15,7 @@ namespace RPSLS
         public int player1Wins = 0;
         public int player2Wins = 0;
         public List<string> gesturesCases;
+        public int totalpointsWin;
 
         //Constructor
         public Game()
@@ -56,6 +57,8 @@ namespace RPSLS
         {
             // get user's choice of player 
             string choice;
+            Console.WriteLine("Pick how many round wins it takes to win");
+            totalpointsWin = Convert.ToInt32(Console.ReadLine());
             do
             {
                 Console.WriteLine("Pick an option:\n1) Human vs Computer \n2) Human vs Human");
