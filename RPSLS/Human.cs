@@ -13,9 +13,11 @@ namespace RPSLS
         //Constructor
 
         //Member Methods (CAN DO)
-        protected override void GestureChoice()
+        protected override string GestureChoice()
         {
-
+            Console.WriteLine("Please choose an option: \n1: Rock \n2: Paper \n3: Scissors \n4: Lizard \n5: Spock");
+            string userGesture = Console.ReadLine();
+            return userGesture;
         }
 
     }

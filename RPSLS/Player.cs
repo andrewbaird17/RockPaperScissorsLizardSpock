@@ -11,6 +11,8 @@ namespace RPSLS
         //Member Variables (HAS A)
         protected Human human;
         protected Computer computer;
+        public List<string> gestures;
+        
 
         //Constructor
         public Player()
@@ -20,7 +22,7 @@ namespace RPSLS
 
         //Member Methods (CAN DO)
 
-        protected abstract void GestureChoice();
+        protected abstract string GestureChoice();
 
     }
 }

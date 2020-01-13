@@ -9,13 +9,18 @@ namespace RPSLS
     class Computer : Player
     {
         //Member Variables (HAS A)
-
+        
         //Constructor
-
-        //Member Methods (CAN DO)
-        protected override void GestureChoice()
+        public Computer()
         {
-
+        }
+        //Member Methods (CAN DO)
+        protected override string GestureChoice()
+        {
+            Random random = new Random();
+            string compGesture;
+            compGesture = gestures[random.Next(gestures.Count + 1)];
+            return compGesture;
         }
 
     }

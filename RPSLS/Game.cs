@@ -72,5 +72,10 @@ namespace RPSLS
         {
             Human player2 = new Human();
         }
+
+        public void DetermineWinner()
+        {
+
+        }
     }
 }
