@@ -19,7 +19,7 @@ namespace RPSLS
         //Constructor
         public Game()
         {
-            gesturesCases = new List<string>() { "Rock crushes Scissors","Scissors cuts Paper", "Paper covers Rock", "Rock crushes Lizard", "Lizard poisons Spock", "Spock smashes Scissors", "Scissors decapitates Lizard", "Lizard eats Paper", "Paper disproves Spock", "Spock vaporizes Rock" };
+            //gesturesCases = new List<string>() { "Rock crushes Scissors","Scissors cuts Paper", "Paper covers Rock", "Rock crushes Lizard", "Lizard poisons Spock", "Spock smashes Scissors", "Scissors decapitates Lizard", "Lizard eats Paper", "Paper disproves Spock", "Spock vaporizes Rock" };
         }
         //Member Methods (CAN DO)
         public void RunGame()
