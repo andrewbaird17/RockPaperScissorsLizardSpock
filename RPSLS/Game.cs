@@ -9,6 +9,7 @@ namespace RPSLS
     class Game
     {
         //Member Variables (HAS A)
+        public Player player;
 
         //Constructor
         public Game()
@@ -17,6 +18,11 @@ namespace RPSLS
         }
         //Member Methods (CAN DO)
         public void RunGame()
+        {
+
+        }
+
+        public void ChooseGamemode()
         {
 
         }

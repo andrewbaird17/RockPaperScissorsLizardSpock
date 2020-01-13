@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Computer
+    class Computer : Player
     {
         //Member Variables (HAS A)
 
         //Constructor
 
         //Member Methods (CAN DO)
+        protected override void GestureChoice()
+        {
 
+        }
 
     }
 }
