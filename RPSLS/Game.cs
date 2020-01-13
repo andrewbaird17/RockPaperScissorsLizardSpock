@@ -9,16 +9,17 @@ namespace RPSLS
     class Game
     {
         //Member Variables (HAS A)
-        public int counter;
+        
         public Player Player1;
         public Player Player2;
         public int player1Wins = 0;
         public int player2Wins = 0;
+        public List<string> gesturesCases;
 
         //Constructor
         public Game()
         {
-            counter = 1;
+            gesturesCases = new List<string>() { "Rock crushes Scissors","Scissors cuts Paper", "Paper covers Rock", "Rock crushes Lizard", "Lizard poisons Spock", "Spock smashes Scissors", "Scissors decapitates Lizard", "Lizard eats Paper", "Paper disproves Spock", "Spock vaporizes Rock" };
         }
         //Member Methods (CAN DO)
         public void RunGame()
@@ -82,6 +83,129 @@ namespace RPSLS
                 Player2.GestureChoice();
                 CompareChoices();
             } while (player1Wins != 2 && player2Wins != 2);
+            DetermineWinner();
+        }
+
+        public void CompareChoices()
+        {
+            if (Player1.ChosenGesture == "rock")
+            {
+                if (Player2.ChosenGesture == "rock")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("There is no winner this round. Pick new choices.");
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "paper" || Player2.ChosenGesture == "spock")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 2 wins this round");
+                    player2Wins += 1;
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "scissors" || Player2.ChosenGesture == "lizard")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 1 wins this round");
+                    player1Wins += 1;
+                    Console.ReadLine();
+                }
+            }
+            if (Player1.ChosenGesture == "paper")
+            {
+                if (Player2.ChosenGesture == "paper")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("There is no winner this round. Pick new choices.");
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "lizard" || Player2.ChosenGesture == "scissors")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 2 wins this round");
+                    player2Wins += 1;
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "rock" || Player2.ChosenGesture == "spock")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 1 wins this round");
+                    player1Wins += 1;
+                    Console.ReadLine();
+                }
+            }
+            if (Player1.ChosenGesture == "scissors")
+            {
+                if (Player2.ChosenGesture == "scissors")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("There is no winner this round. Pick new choices.");
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "rock" || Player2.ChosenGesture == "spock")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 2 wins this round");
+                    player2Wins += 1;
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "paper" || Player2.ChosenGesture == "lizard")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 1 wins this round");
+                    player1Wins += 1;
+                    Console.ReadLine();
+                }
+            }
+            if (Player1.ChosenGesture == "lizard")
+            {
+                if (Player2.ChosenGesture == "lizard")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("There is no winner this round. Pick new choices.");
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "rock" || Player2.ChosenGesture == "scissors")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 2 wins this round");
+                    player2Wins += 1;
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "paper" || Player2.ChosenGesture == "spock")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 1 wins this round");
+                    player1Wins += 1;
+                    Console.ReadLine();
+                }
+            }
+            if (Player1.ChosenGesture == "spock")
+            {
+                if (Player2.ChosenGesture == "spock")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("There is no winner this round. Pick new choices.");
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "paper" || Player2.ChosenGesture == "lizard")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 2 wins this round");
+                    player2Wins += 1;
+                    Console.ReadLine();
+                }
+                else if (Player2.ChosenGesture == "rock" || Player2.ChosenGesture == "scissors")
+                {
+                    Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
+                    Console.WriteLine("Player 1 wins this round");
+                    player1Wins += 1;
+                    Console.ReadLine();
+                }
+            }
+        }
+        public void DetermineWinner()
+        {
             if (player1Wins == 2)
             {
                 Console.WriteLine("Player 1 Wins!");
@@ -92,20 +216,6 @@ namespace RPSLS
                 Console.WriteLine("Player 2 Wins!");
                 Console.ReadLine();
             }
-        }
-
-        public void CompareChoices()
-        {
-            if (Player1.ChosenGesture == Player2.ChosenGesture) 
-            {
-                Console.WriteLine("Player 1 Chose: " + Player1.ChosenGesture + " Player 2 Chose: " + Player2.ChosenGesture + "\nNo Winner this round, please try again.");
-
-                Console.ReadLine();
-            }
-        }
-        public void DetermineWinner()
-        {
-
         }
     }
 }
