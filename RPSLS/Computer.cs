@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Computer : Player
+    public class Computer : Player
     {
         //Member Variables (HAS A)
         
@@ -15,12 +15,11 @@ namespace RPSLS
         {
         }
         //Member Methods (CAN DO)
-        protected override string GestureChoice()
+        public override void GestureChoice()
         {
             Random random = new Random();
-            string compGesture;
-            compGesture = gestures[random.Next(gestures.Count + 1)];
-            return compGesture;
+            ChosenGesture = gestures[random.Next(gestures.Count + 1)].ToLower();
+         
         }
 
     }

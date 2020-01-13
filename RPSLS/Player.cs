@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    abstract class Player
+    public abstract class Player
     {
         //Member Variables (HAS A)
-        protected Human human;
-        protected Computer computer;
-        public List<string> gestures;
+        public string ChosenGesture;
         
+        public List<string> gestures;
+
 
         //Constructor
         public Player()
         {
-            List<string> gestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+           gestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
         }
 
         //Member Methods (CAN DO)
 
-        protected abstract string GestureChoice();
+        public abstract void GestureChoice();
 
     }
 }

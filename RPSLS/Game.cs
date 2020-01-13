@@ -9,8 +9,11 @@ namespace RPSLS
     class Game
     {
         //Member Variables (HAS A)
-        public Player player;
         public int counter;
+        public Player Player1;
+        public Player Player2;
+        public int player1Wins = 0;
+        public int player2Wins = 0;
 
         //Constructor
         public Game()
@@ -22,14 +25,17 @@ namespace RPSLS
         {
             GameInstructions();
             string choice = ChooseGamemode();
-            Human player1 = new Human();
             switch (choice)
             {
                 case "1":
-                    GamewithComp();
+                    Player1 = new Human();
+                    Player2 = new Computer();
+                    GamePlay();
                     break;
                 case "2":
-                    TwoPlayerGame();
+                    Player1 = new Human();
+                    Player2 = new Human();
+                    GamePlay();
                     break;
                 default:
                     break;
@@ -55,7 +61,7 @@ namespace RPSLS
                 choice = Console.ReadLine();
                 Console.Clear();
                 // make user choose one of the options to continue 
-                if (choice != "1" | choice != "2")
+                if (choice != "1" || choice != "2")
                 {
                     Console.WriteLine("Please enter a valid choice to continue to rest of game");
                 }
@@ -63,16 +69,29 @@ namespace RPSLS
             return choice;
         }
 
-        public void GamewithComp()
+        public void GamePlay()
         {
-            Computer comp = new Computer();
+            do
+            {
+                Player1.GestureChoice();
+                Player2.GestureChoice();
+                CompareChoices();
+            } while (player1Wins != 2 && player2Wins != 2);
+            if (player1Wins == 2)
+            {
+                Console.WriteLine("Player 1 Wins!");
+                Console.ReadLine();
+            }
+            else if (player2Wins == 2)
+            {
+
+            }
         }
 
-        public void TwoPlayerGame()
+        public void CompareChoices()
         {
-            Human player2 = new Human();
-        }
 
+        }
         public void DetermineWinner()
         {
 
