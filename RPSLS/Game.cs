@@ -23,28 +23,9 @@ namespace RPSLS
         public void RunGame()
         {
             GameInstructions();
-            string choice = ChooseGamemode();
-            switch (choice)
-            {
-                case "1":
-                    Player1 = new Human();
-                    Player2 = new Computer();
-                    Player1.SetName();
-                    Player2.SetName();
-                    DetermineRoundWins();
-                    GamePlay();
-                    break;
-                case "2":
-                    Player1 = new Human();
-                    Player2 = new Human();
-                    Player1.SetName();
-                    Player2.SetName();
-                    DetermineRoundWins();
-                    GamePlay();
-                    break;
-                default:
-                    break;
-            }
+            SetGameMode();
+            DetermineRoundWins();
+            GamePlay();
         }
 
         public void GameInstructions()
@@ -74,11 +55,33 @@ namespace RPSLS
             return choice;
         }
 
+        public void SetGameMode()
+        {
+            string choice = ChooseGamemode();
+            switch (choice)
+            {
+                case "1":
+                    Player1 = new Human();
+                    Player2 = new Computer();
+                    Player1.SetName();
+                    Player2.SetName();
+                    break;
+                case "2":
+                    Player1 = new Human();
+                    Player2 = new Human();
+                    Player1.SetName();
+                    Player2.SetName();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public void GamePlay()
         {
             do
             {
-                Console.WriteLine(Player1.name + "' sTurn");
+                Console.WriteLine(Player1.name + "'s Turn");
                 //Console.ReadLine();
                 Player1.GestureChoice();
                 Console.Clear();
@@ -214,6 +217,7 @@ namespace RPSLS
             Console.WriteLine("Pick how many round wins it takes to win");
             totalpointsWin = Convert.ToInt32(Console.ReadLine());
             // validate totalpointswin to only take a number
+
             
         }
         public void DetermineWinner()
