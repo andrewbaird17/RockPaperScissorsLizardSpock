@@ -37,6 +37,7 @@ namespace RPSLS
                     break;
                 default:
                     Console.WriteLine("Please enter a valid gesture");
+                    Console.Clear();
                     GestureChoice();
                     break;
             }
