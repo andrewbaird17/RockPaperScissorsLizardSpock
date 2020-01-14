@@ -9,7 +9,7 @@ namespace RPSLS
     class Game
     {
         //Member Variables (HAS A)
-        
+
         public Player Player1;
         public Player Player2;
         public int totalpointsWin;
@@ -17,7 +17,7 @@ namespace RPSLS
         //Constructor
         public Game()
         {
-            
+
         }
         //Member Methods (CAN DO)
         public void RunGame()
@@ -211,14 +211,23 @@ namespace RPSLS
                 }
             }
         }
-        
+
         public void DetermineRoundWins()
         {
             Console.WriteLine("Pick how many round wins it takes to win");
-            totalpointsWin = Convert.ToInt32(Console.ReadLine());
+            string userInput = Console.ReadLine();
             // validate totalpointswin to only take a number
+            bool success = Int32.TryParse(userInput, out totalpointsWin);
+            if (success)
+            {
+                totalpointsWin = Convert.ToInt32(userInput);
+            }
+            else
+            {
+                DetermineRoundWins();
+            }
 
-            
+
         }
         public void DetermineWinner()
         {
