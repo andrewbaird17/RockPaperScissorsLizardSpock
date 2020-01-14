@@ -11,12 +11,14 @@ namespace RPSLS
         //Member Variables (HAS A)
         public string ChosenGesture;
         public List<string> gestures;
+        public int roundWins;
 
 
         //Constructor
         public Player()
         {
            gestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+           roundWins = 0;
         }
 
         //Member Methods (CAN DO)

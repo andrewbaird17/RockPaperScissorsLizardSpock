@@ -12,9 +12,9 @@ namespace RPSLS
         
         public Player Player1;
         public Player Player2;
-        public int player1Wins = 0;
-        public int player2Wins = 0;
-        public List<string> gesturesCases;
+        //public int player1Wins = 0;
+        //public int player2Wins = 0;
+        //public List<string> gesturesCases;
         public int totalpointsWin;
 
         //Constructor
@@ -85,7 +85,7 @@ namespace RPSLS
                 Console.ReadLine();
                 Player2.GestureChoice();
                 CompareChoices();
-            } while (player1Wins != 2 && player2Wins != 2);
+            } while (Player1.roundWins != 2 && Player2.roundWins != 2);
             DetermineWinner();
         }
 
@@ -103,14 +103,14 @@ namespace RPSLS
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 2 wins this round");
-                    player2Wins += 1;
+                    Player2.roundWins += 1;
                     Console.ReadLine();
                 }
                 else if (Player2.ChosenGesture == "scissors" || Player2.ChosenGesture == "lizard")
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 1 wins this round");
-                    player1Wins += 1;
+                    Player1.roundWins += 1;
                     Console.ReadLine();
                 }
             }
@@ -126,14 +126,14 @@ namespace RPSLS
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 2 wins this round");
-                    player2Wins += 1;
+                    Player2.roundWins += 1;
                     Console.ReadLine();
                 }
                 else if (Player2.ChosenGesture == "rock" || Player2.ChosenGesture == "spock")
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 1 wins this round");
-                    player1Wins += 1;
+                    Player1.roundWins += 1;
                     Console.ReadLine();
                 }
             }
@@ -149,14 +149,14 @@ namespace RPSLS
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 2 wins this round");
-                    player2Wins += 1;
+                    Player2.roundWins += 1;
                     Console.ReadLine();
                 }
                 else if (Player2.ChosenGesture == "paper" || Player2.ChosenGesture == "lizard")
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 1 wins this round");
-                    player1Wins += 1;
+                    Player1.roundWins += 1;
                     Console.ReadLine();
                 }
             }
@@ -172,14 +172,14 @@ namespace RPSLS
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 2 wins this round");
-                    player2Wins += 1;
+                    Player2.roundWins += 1;
                     Console.ReadLine();
                 }
                 else if (Player2.ChosenGesture == "paper" || Player2.ChosenGesture == "spock")
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 1 wins this round");
-                    player1Wins += 1;
+                    Player1.roundWins += 1;
                     Console.ReadLine();
                 }
             }
@@ -195,26 +195,26 @@ namespace RPSLS
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 2 wins this round");
-                    player2Wins += 1;
+                    Player2.roundWins += 1;
                     Console.ReadLine();
                 }
                 else if (Player2.ChosenGesture == "rock" || Player2.ChosenGesture == "scissors")
                 {
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 1 wins this round");
-                    player1Wins += 1;
+                    Player1.roundWins += 1;
                     Console.ReadLine();
                 }
             }
         }
         public void DetermineWinner()
         {
-            if (player1Wins == 2)
+            if (Player1.roundWins == 2)
             {
                 Console.WriteLine("Player 1 Wins!");
                 Console.ReadLine();
             }
-            else if (player2Wins == 2)
+            else if (Player2.roundWins == 2)
             {
                 Console.WriteLine("Player 2 Wins!");
                 Console.ReadLine();
