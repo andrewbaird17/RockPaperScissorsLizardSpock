@@ -78,8 +78,8 @@ namespace RPSLS
         {
             do
             {
-                Console.WriteLine(Player1.name + "'sTurn");
-                Console.ReadLine();
+                Console.WriteLine(Player1.name + "' sTurn");
+                //Console.ReadLine();
                 Player1.GestureChoice();
                 Console.Clear();
                 Console.WriteLine(Player2.name + "'s Turn");
