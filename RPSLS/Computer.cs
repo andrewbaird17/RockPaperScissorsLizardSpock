@@ -18,6 +18,8 @@ namespace RPSLS
         //Member Methods (CAN DO)
         public override void GestureChoice()
         {
+            Console.WriteLine(name + "'s Turn");
+            Console.ReadLine();
             Random random = new Random();
             ChosenGesture = gestures[random.Next(5)].ToLower();       
         }

@@ -19,6 +19,7 @@ namespace RPSLS
         //Member Methods (CAN DO)
         public override void GestureChoice()
         {
+            Console.WriteLine(name + "'s Turn");
             Console.WriteLine("Please choose an option: \n Rock \n Paper \n Scissors \n Lizard \n Spock");
             ChosenGesture = Console.ReadLine().ToLower();
 
