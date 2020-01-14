@@ -21,6 +21,9 @@ namespace RPSLS
             Random random = new Random();
             ChosenGesture = gestures[random.Next(5)].ToLower();       
         }
-
+        public override void SetName()
+        {
+            name = "Computer";
+        }
     }
 }

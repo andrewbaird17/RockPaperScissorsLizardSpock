@@ -19,7 +19,7 @@ namespace RPSLS
         //Member Methods (CAN DO)
         public override void GestureChoice()
         {
-            Console.WriteLine("Please choose an option: \n1: Rock \n2: Paper \n3: Scissors \n4: Lizard \n5: Spock");
+            Console.WriteLine("Please choose an option: \n Rock \n Paper \n Scissors \n Lizard \n Spock");
             ChosenGesture = Console.ReadLine().ToLower();
 
             // validate the user choice below
@@ -36,19 +36,17 @@ namespace RPSLS
                 case "spock":
                     break;
                 default:
+                    Console.WriteLine("Please enter a valid gesture");
                     GestureChoice();
                     break;
             }
-            //if (ChosenGesture != "rock" || ChosenGesture != "paper" || ChosenGesture != "scissors" || ChosenGesture != "lizard" || ChosenGesture != "spock")
-            //foreach(string gesture in gestures)
-            //{
-            //    if (ChosenGesture != gesture)
-            //    Console.WriteLine("Please enter a valid choice to continue to rest of game");
-            //    Console.ReadLine();
-            //    GestureChoice();
-            //}
-
         }
+        public override void SetName()
+        {
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine();
+        }
+        
     }
 }
 

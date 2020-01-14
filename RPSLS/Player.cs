@@ -12,6 +12,7 @@ namespace RPSLS
         public string ChosenGesture;
         public List<string> gestures;
         public int roundWins;
+        public string name;
 
 
         //Constructor
@@ -24,6 +25,8 @@ namespace RPSLS
         //Member Methods (CAN DO)
 
         public abstract void GestureChoice();
+
+        public abstract void SetName();
 
     }
 }

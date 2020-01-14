@@ -12,15 +12,12 @@ namespace RPSLS
         
         public Player Player1;
         public Player Player2;
-        //public int player1Wins = 0;
-        //public int player2Wins = 0;
-        //public List<string> gesturesCases;
         public int totalpointsWin;
 
         //Constructor
         public Game()
         {
-            //gesturesCases = new List<string>() { "Rock crushes Scissors","Scissors cuts Paper", "Paper covers Rock", "Rock crushes Lizard", "Lizard poisons Spock", "Spock smashes Scissors", "Scissors decapitates Lizard", "Lizard eats Paper", "Paper disproves Spock", "Spock vaporizes Rock" };
+            
         }
         //Member Methods (CAN DO)
         public void RunGame()
@@ -32,11 +29,17 @@ namespace RPSLS
                 case "1":
                     Player1 = new Human();
                     Player2 = new Computer();
+                    Player1.SetName();
+                    Player2.SetName();
+                    DetermineRoundWins();
                     GamePlay();
                     break;
                 case "2":
                     Player1 = new Human();
                     Player2 = new Human();
+                    Player1.SetName();
+                    Player2.SetName();
+                    DetermineRoundWins();
                     GamePlay();
                     break;
                 default:
@@ -57,8 +60,6 @@ namespace RPSLS
         {
             // get user's choice of player 
             string choice;
-            Console.WriteLine("Pick how many round wins it takes to win");
-            //totalpointsWin = Convert.ToInt32(Console.ReadLine());
             do
             {
                 Console.WriteLine("Pick an option:\n1) Human vs Computer \n2) Human vs Human");
@@ -77,15 +78,15 @@ namespace RPSLS
         {
             do
             {
-                Console.WriteLine("Player 1's Turn");
+                Console.WriteLine(Player1.name + "'sTurn");
                 Console.ReadLine();
                 Player1.GestureChoice();
                 Console.Clear();
-                Console.WriteLine("Player 2's Turn");
+                Console.WriteLine(Player2.name + "'s Turn");
                 Console.ReadLine();
                 Player2.GestureChoice();
                 CompareChoices();
-            } while (Player1.roundWins != 2 && Player2.roundWins != 2);
+            } while (Player1.roundWins != totalpointsWin && Player2.roundWins != totalpointsWin);
             DetermineWinner();
         }
 
@@ -207,14 +208,22 @@ namespace RPSLS
                 }
             }
         }
+        
+        public void DetermineRoundWins()
+        {
+            Console.WriteLine("Pick how many round wins it takes to win");
+            totalpointsWin = Convert.ToInt32(Console.ReadLine());
+            // validate totalpointswin to only take a number
+            
+        }
         public void DetermineWinner()
         {
-            if (Player1.roundWins == 2)
+            if (Player1.roundWins == totalpointsWin)
             {
                 Console.WriteLine("Player 1 Wins!");
                 Console.ReadLine();
             }
-            else if (Player2.roundWins == 2)
+            else if (Player2.roundWins == totalpointsWin)
             {
                 Console.WriteLine("Player 2 Wins!");
                 Console.ReadLine();
