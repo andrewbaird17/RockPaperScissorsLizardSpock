@@ -58,7 +58,7 @@ namespace RPSLS
             // get user's choice of player 
             string choice;
             Console.WriteLine("Pick how many round wins it takes to win");
-            totalpointsWin = Convert.ToInt32(Console.ReadLine());
+            //totalpointsWin = Convert.ToInt32(Console.ReadLine());
             do
             {
                 Console.WriteLine("Pick an option:\n1) Human vs Computer \n2) Human vs Human");

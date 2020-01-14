@@ -10,7 +10,6 @@ namespace RPSLS
     {
         //Member Variables (HAS A)
         public string ChosenGesture;
-        
         public List<string> gestures;
 
 

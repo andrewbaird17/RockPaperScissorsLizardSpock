@@ -23,6 +23,22 @@ namespace RPSLS
             ChosenGesture = Console.ReadLine().ToLower();
 
             // validate the user choice below
+            switch (ChosenGesture)
+            {
+                case "rock":
+                    break;
+                case "paper":
+                    break;
+                case "scissors":
+                    break;
+                case "lizard":
+                    break;
+                case "spock":
+                    break;
+                default:
+                    GestureChoice();
+                    break;
+            }
             //if (ChosenGesture != "rock" || ChosenGesture != "paper" || ChosenGesture != "scissors" || ChosenGesture != "lizard" || ChosenGesture != "spock")
             //foreach(string gesture in gestures)
             //{
