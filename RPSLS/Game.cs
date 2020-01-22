@@ -82,10 +82,12 @@ namespace RPSLS
         public void GamePlay()
         {
             do
-            {                
-                Player1.GestureChoice();
+            {
+                string p1Input = Player1.GetInput();
+                Player1.GestureChoice(p1Input);
                 Console.Clear();
-                Player2.GestureChoice();
+                string p2Input = Player2.GetInput();
+                Player2.GestureChoice(p2Input);
                 CompareChoices();
             } while (Player1.roundWins != totalpointsWin && Player2.roundWins != totalpointsWin);
         }

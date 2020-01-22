@@ -24,9 +24,10 @@ namespace RPSLS
 
         //Member Methods (CAN DO)
 
-        public abstract void GestureChoice();
+        public abstract void GestureChoice(string ChosenGesture);
 
         public abstract void SetName();
 
+        public abstract string GetInput();
     }
 }
