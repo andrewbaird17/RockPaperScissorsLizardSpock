@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Game
+    public class Game
     {
         //Member Variables (HAS A)
 
@@ -88,11 +88,11 @@ namespace RPSLS
                 Console.Clear();
                 string p2Input = Player2.GetInput();
                 Player2.GestureChoice(p2Input);
-                CompareChoices();
+                CompareChoices(Player1, Player2);
             } while (Player1.roundWins != totalpointsWin && Player2.roundWins != totalpointsWin);
         }
 
-        public void CompareChoices()
+        public void CompareChoices(Player Player1, Player Player2)
         {
             if (Player1.ChosenGesture == "rock")
             {
@@ -116,8 +116,8 @@ namespace RPSLS
                     Console.WriteLine("Player 1 chose " + Player1.ChosenGesture + " and Player 2 chose " + Player2.ChosenGesture);
                     Console.WriteLine("Player 1 wins this round");
                     Player1.roundWins += 1;
-                    Console.ReadLine();
-                    Console.Clear();
+                    //Console.ReadLine();
+                    //Console.Clear();
                 }
             }
             if (Player1.ChosenGesture == "paper")

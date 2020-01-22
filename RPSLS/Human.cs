@@ -40,6 +40,7 @@ namespace RPSLS
                 default:
                     Console.WriteLine("Please enter a valid gesture");
                     Console.Clear();
+                    ChosenGesture = "";
                     GetInput();
                     break;
             }
